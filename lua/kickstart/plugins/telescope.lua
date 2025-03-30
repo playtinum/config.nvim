@@ -56,11 +56,29 @@ return {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          --   mappings = {
+          --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          --   },
+
+          -- Create dynamic layout with preview
+          layout_strategy = 'flex',
+          layout_config = {
+            flex = {
+              flip_colums = 120,
+            },
+            horizontal = {
+              width = 0.9,
+              height = 0.85,
+              preview_width = 0.5,
+            },
+            vertical = {
+              width = 0.9,
+              height = 0.85,
+              preview_width = 0.4,
+            },
+          },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
