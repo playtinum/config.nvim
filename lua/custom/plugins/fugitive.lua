@@ -16,7 +16,7 @@ return {
   keys = {
     -- Basic git commands
     { '<leader>gs', '<cmd>Git<cr>', desc = '[G]it [s]tatus' },
-    { '<leader>gcm', '<cmd>Git commit<cr>', desc = '[G]it [c]ommit with [c]essage' },
+    { '<leader>gcm', '<cmd>Git commit<cr>', desc = '[G]it [c]ommit with [m]essage' },
     { '<leader>gca', '<cmd>Git commit<cr>', desc = '[G]it [c]ommit with [a]mend' },
     { '<leader>gp', '<cmd>Git push<cr>', desc = '[G]it [p]ush' },
     { '<leader>gP', '<cmd>Git pull<cr>', desc = '[G]it [P]ull' },
