@@ -10,12 +10,39 @@ return {
   -- Lazy load on VeryLazy event, command, or keymap
   event = 'VeryLazy',
   cmd = 'Neogit',
-  keys = {
-    { '<leader>gg', '<cmd>Neogit<CR>', desc = 'Open [G]it with [g]' },
-    { '<leader>gc', '<cmd>Neogit commit<CR>', desc = '[G]it [c]ommit' },
-    { '<leader>gp', '<cmd>Neogit push<CR>', desc = '[G]it [p]ush' },
-    { '<leader>gl', '<cmd>Neogit pull<CR>', desc = '[G]it [p]ull' },
-  },
+  keys = function()
+    local neogit = require 'neogit'
+    return {
+      {
+        '<leader>gg',
+        function()
+          neogit.open()
+        end,
+        desc = 'Open [g]it with [g]',
+      },
+      {
+        '<leader>gc',
+        function()
+          neogit.open { 'commit' }
+        end,
+        desc = '[G]it [c]ommit',
+      },
+      {
+        '<leader>gp',
+        function()
+          neogit.open { 'push' }
+        end,
+        desc = '[G]it [p]ush',
+      },
+      {
+        '<leader>gl',
+        function()
+          neogit.open { 'pull' }
+        end,
+        desc = '[G]it [p]ull',
+      },
+    }
+  end,
   -- Plugin initialization and configuration
   opts = {
     -- Configuration options
@@ -25,12 +52,6 @@ return {
     },
     -- Customize UI
     kind = 'tab', -- open in new tab (alternatives: split, vsplit, floating)
-    -- Customize signs displayed in the status column
-    signs = {
-      section = { '', '' },
-      item = { '', '' },
-      hunk = { '', '' },
-    },
     -- Disable certain features if needed
     disable_context_highlighting = false,
     disable_signs = false,
