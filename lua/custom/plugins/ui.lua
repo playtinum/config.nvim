@@ -1,6 +1,6 @@
 -- Minimal configuration for noice.nvim focused only on command line features
 
-return {
+{
   'folke/noice.nvim',
   event = 'VeryLazy',
   dependencies = {
